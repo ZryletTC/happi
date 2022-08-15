@@ -121,7 +121,7 @@ class JSONBackend(_Backend):
             # Dump to file
             try:
                 json.dump(db, f, sort_keys=True, indent=4)
-
+                f.write("\n")  # Add newline at EOF becasue json.dump doesn't
             finally:
                 if fcntl is not None:
                     # Release lock in filesystem
